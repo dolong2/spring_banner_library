@@ -51,7 +51,6 @@ class BannerGenerator {
     }
     private class TextBanner : Banner {
         override fun printBanner(environment: Environment, sourceClass: Class<*>, out: PrintStream) {
-            // 스프링 부트 시작 시 출력될 배너 내용을 구현
             try{
                 val property = environment.getProperty("spring.banner.text")
                 property!!.split("\\n")
