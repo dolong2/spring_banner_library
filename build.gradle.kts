@@ -37,3 +37,15 @@ tasks.withType<Test> {
 application{
     mainClass.set("library.banner.BannerGenerator")
 }
+
+publishing {
+    repositories {
+        mavenLocal()
+    }
+
+    publications {
+        register("mavenJava", MavenPublication::class.java){
+            from(components["java"])
+        }
+    }
+}
